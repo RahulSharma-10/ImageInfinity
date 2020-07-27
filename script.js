@@ -11,7 +11,7 @@ let filterArray = [];
 
 //API
 const count = 30;
-const apiKey = 'N1CgdDVyytvytq5x2Hn1oz1OZjnRb3vNWgP6nzwzy0U';
+const apiKey = '**AddAPI**';
 const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
 
 //Image Loading Check
