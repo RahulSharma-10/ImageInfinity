@@ -1,10 +1,13 @@
+//Image Container & Loader are the two things to be operated on majorly here
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
+//Ready is a boolean for the loader hidden functionality
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
+let filterArray = [];
 
 //API
 const count = 30;
@@ -18,6 +21,11 @@ function imageLoaded() {
     ready = true;
     loader.hidden = true;
   }
+  //IF THE SLIDER WOULD HAVE BEEN A SMOOTH TRANSITION AND NOT AS INFINITE, WE CAN ADD THE CODE BELOW
+  // }else{
+  //   loader.hidden = false;
+  //   ready = false;
+  // }
 }
 
 // Helper Function to avoid DRY
@@ -59,6 +67,7 @@ async function getPhotos() {
   try {
     const response = await fetch(apiUrl);
     photosArray = await response.json();
+    
     displayPhotos();
   } catch (error) {
     // Catch Error Here
